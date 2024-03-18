@@ -14,5 +14,5 @@ for the look and feel. All the plugin manifest is configured in
 
 ## License
 
-All assets and code are under the [Apache license](LICENSE) and in the public
+All assets and code are under the [MIT License](LICENSE) and in the public
 domain unless specified otherwise.
