@@ -1,8 +1,9 @@
 .popup-container {
-    width: 100%;
+    max-width: 100%;
     box-sizing: border-box;
     padding: 30px;
-    font-family: 'Vazirmatn'
+    font-family: 'Vazirmatn';
+    width: 400px;
 }
 
 .popup-container .popup-left {
