@@ -1,0 +1,39 @@
+.popup-container {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 30px;
+    font-family: 'Vazirmatn'
+}
+
+.popup-container .popup-left {
+    float: left
+}
+
+.popup-container .popup-right {
+    float: right;
+    direction: rtl;
+    text-align: right
+}
+
+.clearfix {
+    clear: both
+}
+
+.popup-container .popup-left img {
+    max-width: 100%;
+    width: 150px
+}
+
+.popup-container .popup-right h1,
+.popup-container .popup-right h2 {
+    font-size: 20px
+}
+
+.popup-container .popup-right .copyright {
+    font-size: 12px;
+    color: #6c757d
+}
+
+.popup-container .popup-right .copyright a {
+    color: #6c757d
+}

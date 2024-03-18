@@ -1,0 +1,31 @@
+{
+  "manifest_version": 2,
+  "name": "Konkur Countdown",
+  "version": "1.0.0",
+  "description": "تا ماراتن کنکور چند روز باقی مانده است؟",
+  "icons": {
+    "48": "images/logo.png",
+    "96": "images/logo.png"
+  },
+  "permissions": [
+    "tabs"
+  ],
+  "browser_action": {
+    "default_icon": "images/logo.png",
+    "default_title": "Konkur Countdown",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.mozilla.org/*"
+      ],
+      "js": [
+        "popup.js"
+      ],
+      "css": [
+        "popup.css"
+      ]
+    }
+  ]
+}
