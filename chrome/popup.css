@@ -40,3 +40,18 @@
 .popup-container .popup-right .copyright a {
     color: #6c757d
 }
+
+.popup-container .popup-header {
+    margin-bottom: 10px;
+    text-align: right
+}
+
+.popup-container .popup-header .close-button {
+    color: red;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 15px;
+    font-family: 'Vazirmatn';
+    direction: rtl
+}

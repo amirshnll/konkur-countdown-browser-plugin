@@ -1,7 +1,7 @@
 # Konkur Countdown Browser Plugin
 
 <p>
-    <img src="https://img.shields.io/badge/version-1.0.0-blue" alt="version">
+    <img src="https://img.shields.io/badge/version-1.1.0-blue" alt="version">
 </p>
 
 
