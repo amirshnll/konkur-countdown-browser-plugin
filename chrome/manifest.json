@@ -13,9 +13,9 @@
     "default_title": "Konkur Countdown",
     "default_popup": "popup.html",
     "default_icon": {
-      "16": "images/logo.png",
-      "32": "images/logo.png",
-      "48": "images/logo.png"
+      "16": "images/logo16.png",
+      "32": "images/logo32.png",
+      "48": "images/logo48.png"
     }
   },
   "content_scripts": [
@@ -32,8 +32,8 @@
     }
   ],
   "icons": {
-    "16": "images/logo.png",
-    "48": "images/logo.png",
-    "128": "images/logo.png"
+    "16": "images/logo16.png",
+    "48": "images/logo48.png",
+    "128": "images/logo128.png"
   }
 }

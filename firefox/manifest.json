@@ -4,8 +4,8 @@
   "version": "1.1.0",
   "description": "تا ماراتن کنکور چند روز باقی مانده است؟",
   "icons": {
-    "48": "images/logo.png",
-    "96": "images/logo.png"
+    "48": "images/logo48.png",
+    "96": "images/logo96.png"
   },
   "permissions": [
     "tabs"
