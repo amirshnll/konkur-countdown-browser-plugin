@@ -55,3 +55,8 @@
     font-family: 'Vazirmatn';
     direction: rtl
 }
+
+.popup-container .popup-right .version {
+    font-size: 10px;
+    color: #6c757d
+}
