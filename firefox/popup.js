@@ -1,9 +1,3 @@
-function daysBetweenDates(date1, date2) {
-  const oneDay = 24 * 60 * 60 * 1000;
-  const diffDays = Math.round(Math.abs((date1 - date2) / oneDay));
-  return diffDays;
-}
-
 function convertToPersianNumber(input) {
   const persianDigits = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
   const inputStr = input.toString();
@@ -20,6 +14,12 @@ function convertToPersianNumber(input) {
   return persianNumber;
 }
 
+function daysBetweenDates(date1, date2) {
+  const oneDay = 24 * 60 * 60 * 1000;
+  const diffDays = Math.round(Math.abs((date1 - date2) / oneDay));
+  return diffDays;
+}
+
 function createIcon(number) {
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48">
     <text x="5" y="35" font-size="32" fill="#faa61a">${number}</text>
@@ -33,18 +33,32 @@ function changeIcon(number) {
   browser.browserAction.setIcon({ path: iconPath });
 }
 
-function calculateDistanceToApril25() {
+function calculateDistanceToApril25OrJuly5() {
   const today = new Date();
-  let april25ThisYear = new Date(today.getFullYear(), 3, 25);
-  if (today > april25ThisYear) {
-    april25ThisYear = new Date(today.getFullYear() + 1, 3, 25);
+  let targetDate;
+
+  if (
+    today.getMonth() < 3 ||
+    (today.getMonth() === 3 && today.getDate() < 25)
+  ) {
+    targetDate = new Date(today.getFullYear(), 3, 25);
+  } else {
+    targetDate = new Date(today.getFullYear(), 6, 5);
   }
-  const distance = daysBetweenDates(today, april25ThisYear);
+
+  if (today > targetDate) {
+    if (targetDate.getMonth() === 3) {
+      targetDate = new Date(today.getFullYear() + 1, 3, 25);
+    } else {
+      targetDate = new Date(today.getFullYear() + 1, 6, 5);
+    }
+  }
+
+  const distance = daysBetweenDates(today, targetDate);
   const persianDistance = convertToPersianNumber(distance);
   document.getElementById("countdown").textContent = `${persianDistance} روز`;
   changeIcon(distance);
 }
-calculateDistanceToApril25();
 
 document.addEventListener("DOMContentLoaded", function () {
   var closeButton = document.getElementById("closeButton");
@@ -56,3 +70,6 @@ document.addEventListener("DOMContentLoaded", function () {
     false
   );
 });
+
+// Run countdown
+calculateDistanceToApril25OrJuly5();

@@ -33,18 +33,32 @@ function changeIcon(number) {
   chrome.action.setIcon({ path: iconPath });
 }
 
-function calculateDistanceToApril25() {
+function calculateDistanceToApril25OrJuly5() {
   const today = new Date();
-  let april25ThisYear = new Date(today.getFullYear(), 3, 25);
-  if (today > april25ThisYear) {
-    april25ThisYear = new Date(today.getFullYear() + 1, 3, 25);
+  let targetDate;
+
+  if (
+    today.getMonth() < 3 ||
+    (today.getMonth() === 3 && today.getDate() < 25)
+  ) {
+    targetDate = new Date(today.getFullYear(), 3, 25);
+  } else {
+    targetDate = new Date(today.getFullYear(), 6, 5);
   }
-  const distance = daysBetweenDates(today, april25ThisYear);
+
+  if (today > targetDate) {
+    if (targetDate.getMonth() === 3) {
+      targetDate = new Date(today.getFullYear() + 1, 3, 25);
+    } else {
+      targetDate = new Date(today.getFullYear() + 1, 6, 5);
+    }
+  }
+
+  const distance = daysBetweenDates(today, targetDate);
   const persianDistance = convertToPersianNumber(distance);
   document.getElementById("countdown").textContent = `${persianDistance} روز`;
   changeIcon(distance);
 }
-calculateDistanceToApril25();
 
 document.addEventListener("DOMContentLoaded", function () {
   var closeButton = document.getElementById("closeButton");
@@ -56,3 +70,6 @@ document.addEventListener("DOMContentLoaded", function () {
     false
   );
 });
+
+// Run countdown
+calculateDistanceToApril25OrJuly5();
